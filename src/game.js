@@ -1,21 +1,21 @@
-let config = {
+var config = {
     type: Phaser.WEBGL,
     width: 480,
     height: 640,
     backgroundColor: "black",
     physics: {
-        default: "arcade",
-        arcade: {
-            gravity: {
-                x: 0,
-                y: 0
-            }
-        }
+      default: "arcade",
+      arcade: {
+        gravity: { x: 0, y: 0 }
+      }
     },
-
-    scene: [],
+    scene: [
+      SceneMainMenu,
+      SceneMain,
+      SceneGameOver
+    ],
     pixelArt: true,
     roundPixels: true
-};
-
-let game = new Phaser.Game(config);
+  };
+  
+  var game = new Phaser.Game(config);
