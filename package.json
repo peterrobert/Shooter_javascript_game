@@ -4,7 +4,10 @@
   "description": "A game created with javascript",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack --progress --mode=production",
+    "watch": "webpack --progress --watch",
+    "server": "webpack-dev-server --open"
   },
   "repository": {
     "type": "git",
