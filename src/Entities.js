@@ -11,10 +11,9 @@ class Entity extends Phaser.GameObjects.Sprite {
   
     explode(canDestroy) {
       if (!this.getData("isDead")) {
-        // Set the texture to the explosion image, then play the animation
-        this.setTexture("sprExplosion");  // this refers to the same animation key we used when we added this.anims.create previously
-        this.play("sprExplosion"); // play the animation
-        // pick a random explosion sound within the array we defined in this.sfx in SceneMain
+       
+        this.setTexture("sprExplosion");
+        this.play("sprExplosion"); 
         this.scene.sfx.explosions[Phaser.Math.Between(0, this.scene.sfx.explosions.length - 1)].play();
         if (this.shootTimer !== undefined) {
           if (this.shootTimer) {
@@ -61,7 +60,7 @@ class Entity extends Phaser.GameObjects.Sprite {
     }
   
     onDestroy() {
-      this.scene.time.addEvent({ // go to game over scene
+      this.scene.time.addEvent({ 
         delay: 1000,
         callback: function() {
           this.scene.scene.start("SceneGameOver");
@@ -78,13 +77,13 @@ class Entity extends Phaser.GameObjects.Sprite {
   
       if (this.getData("isShooting")) {
         if (this.getData("timerShootTick") < this.getData("timerShootDelay")) {
-          this.setData("timerShootTick", this.getData("timerShootTick") + 1); // every game update, increase timerShootTick by one until we reach the value of timerShootDelay
+          this.setData("timerShootTick", this.getData("timerShootTick") + 1); 
         }
-        else { // when the "manual timer" is triggered:
+        else { 
           var laser = new PlayerLaser(this.scene, this.x, this.y);
           this.scene.playerLasers.add(laser);
         
-          this.scene.sfx.laser.play(); // play the laser sound effect
+          this.scene.sfx.laser.play();
           this.setData("timerShootTick", 0);
         }
       }
@@ -149,6 +148,13 @@ class Entity extends Phaser.GameObjects.Sprite {
             this.angle += 5;
           } 
         }
+
+        if (this.x < this.scene.player.x) {
+          this.angle -= 5;
+        }
+        else {
+          this.angle += 5;
+        } 
       }
     }
   }
@@ -207,7 +213,7 @@ class Entity extends Phaser.GameObjects.Sprite {
   
     createLayers() {
       for (var i = 0; i < 2; i++) {
-        // creating two backgrounds will allow a continuous flow giving the illusion that they are moving.
+       
         var layer = this.scene.add.sprite(0, 0, this.key);
         layer.y = (layer.displayHeight * i);
         var flipX = Phaser.Math.Between(0, 10) >= 5 ? -1 : 1;
