@@ -97,43 +97,51 @@ class SceneMain extends Phaser.Scene {
     this.time.addEvent({
       delay: 2000,
       callback: function () {
-       
-    var enemy = null;
 
-    if (Phaser.Math.Between(0, 10) >= 3) {
-      enemy = new GunShip(
-        this,
-        Phaser.Math.Between(0, this.game.config.width),
-        0
-      );
-    }
-    else if (Phaser.Math.Between(0, 10) >= 5) {
-      if (this.getEnemiesByType("ChaserShip").length < 5) {
+        var enemy = null;
 
-        enemy = new ChaserShip(
-          this,
-          Phaser.Math.Between(0, this.game.config.width),
-          0
-        );
-      }
-    }
-    else {
-      enemy = new CarrierShip(
-        this,
-        Phaser.Math.Between(0, this.game.config.width),
-        0
-      );
-    }
+        if (Phaser.Math.Between(0, 10) >= 3) {
+          enemy = new GunShip(
+            this,
+            Phaser.Math.Between(0, this.game.config.width),
+            0
+          );
+        } else if (Phaser.Math.Between(0, 10) >= 5) {
+          if (this.getEnemiesByType("ChaserShip").length < 5) {
 
-    if (enemy !== null) {
-      enemy.setScale(Phaser.Math.Between(10, 20) * 0.1);
-      this.enemies.add(enemy);
-    }
+            enemy = new ChaserShip(
+              this,
+              Phaser.Math.Between(0, this.game.config.width),
+              0
+            );
+          }
+        } else {
+          enemy = new CarrierShip(
+            this,
+            Phaser.Math.Between(0, this.game.config.width),
+            0
+          );
+        }
+
+        if (enemy !== null) {
+          enemy.setScale(Phaser.Math.Between(10, 20) * 0.1);
+          this.enemies.add(enemy);
+        }
       },
       callbackScope: this,
       loop: true
     });
 
+    this.physics.add.collider(this.playerLasers, this.enemies, function (playerLaser, enemy) {
+      if (enemy) {
+        if (enemy.onDestroy !== undefined) {
+          enemy.onDestroy();
+        }
+
+        enemy.explode(true);
+        playerLaser.destroy();
+      }
+    });
   }
 
   update() {
@@ -160,21 +168,20 @@ class SceneMain extends Phaser.Scene {
         enemy.x > this.game.config.width + enemy.displayWidth ||
         enemy.y < -enemy.displayHeight * 4 ||
         enemy.y > this.game.config.height + enemy.displayHeight) {
-    
+
         if (enemy) {
           if (enemy.onDestroy !== undefined) {
             enemy.onDestroy();
           }
-    
+
           enemy.destroy();
         }
-    
-    }
+
+      }
     }
     if (this.keySpace.isDown) {
       this.player.setData("isShooting", true);
-    }
-    else {
+    } else {
       this.player.setData("timerShootTick", this.player.getData("timerShootDelay") - 1);
       this.player.setData("isShooting", false);
     }
