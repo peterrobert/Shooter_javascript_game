@@ -222,6 +222,10 @@ class SceneMain extends Phaser.Scene {
         this.player.setData("isShooting", false);
       }
     }
+
+    for (var i = 0; i < this.backgrounds.length; i++) {
+      this.backgrounds[i].update();
+    }
   }
 
   getEnemiesByType(type) {
