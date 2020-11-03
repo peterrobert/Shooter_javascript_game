@@ -5,6 +5,8 @@ class SceneMain extends Phaser.Scene {
     });
   }
 
+
+
   preload() {
 
 
@@ -99,6 +101,7 @@ class SceneMain extends Phaser.Scene {
     this.enemyLasers = this.add.group();
     this.playerLasers = this.add.group();
 
+   
 
     this.time.addEvent({
       delay: 2000,
@@ -142,6 +145,7 @@ class SceneMain extends Phaser.Scene {
       if (enemy) {
         if (enemy.onDestroy !== undefined) {
           enemy.onDestroy();
+         
         }
 
         enemy.explode(true);
@@ -153,6 +157,7 @@ class SceneMain extends Phaser.Scene {
       if (!player.getData("isDead") &&
         !enemy.getData("isDead")) {
         player.explode(false);
+        player.onDestroy();
         enemy.explode(true);
       }
     })
@@ -164,9 +169,13 @@ class SceneMain extends Phaser.Scene {
         laser.destroy();
       }
     });
+ 
+    
+    
   }
 
   update() {
+    
     this.player.update();
 
     if (this.keyW.isDown) {
