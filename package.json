@@ -2,7 +2,7 @@
   "name": "shooter_javascript_game",
   "version": "1.0.0",
   "description": "A game created with javascript",
-  "main": "index.js",
+  "main": "game.js",
   "scripts": {
     "test": "jest",
     "build": "webpack --progress --mode=production",
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/peterrobert/Shooter_javascript_game#readme",
   "devDependencies": {
     "babel-loader": "^7.1.5",
+    "copy-webpack-plugin": "^6.2.1",
     "webpack": "^5.3.2",
     "webpack-cli": "^4.1.0"
   },

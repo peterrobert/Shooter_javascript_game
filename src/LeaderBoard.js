@@ -40,6 +40,6 @@ class LeaderBoard {
 
 }
 
-module.exports = {
+export default {
     LeaderBoard
 }

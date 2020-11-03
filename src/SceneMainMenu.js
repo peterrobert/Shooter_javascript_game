@@ -1,4 +1,5 @@
 import { LeaderBoard } from "./LeaderBoard";
+
 class SceneMainMenu extends Phaser.Scene {
   constructor() {
     super({
@@ -67,3 +68,4 @@ class SceneMainMenu extends Phaser.Scene {
 
   
 }
+export default {SceneMainMenu}
