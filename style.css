@@ -5,3 +5,20 @@
     margin: 0 auto;
     border: 1px solid black;
 }
+
+.form-group{
+    font-weight: bolder;
+    margin: 0 auto;
+    position: absolute;
+    left: 50px;
+    margin-top: 600px;
+    color: #00ff00;
+    text-transform: uppercase;
+    font-family: arial;
+}
+
+#usr{
+    border-radius: 11px;
+    height: 30px;
+    width: 240px;
+}

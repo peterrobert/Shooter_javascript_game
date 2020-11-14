@@ -460,6 +460,8 @@ function startGame() {
   teleportSound.play();
   // show player game starts
   player.exists = true;
+
+  
 }
 
 

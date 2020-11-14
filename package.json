@@ -1,0 +1,26 @@
+{
+  "name": "shooter_javascript_game",
+  "version": "1.0.0",
+  "description": "A javascript shooter game",
+  "main": "code.js",
+  "scripts": {
+    "test": "jest",
+    "build": "webpack --progress --mode=production",
+    "watch": "webpack --progress --watch",
+    "server": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peterrobert/Shooter_javascript_game.git"
+  },
+  "author": "peter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/peterrobert/Shooter_javascript_game/issues"
+  },
+  "homepage": "https://github.com/peterrobert/Shooter_javascript_game#readme",
+  "devDependencies": {
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.2.0"
+  }
+}
