@@ -1,5 +1,3 @@
-const exports = require("webpack");
-
 class ScoreSave {
 
     constructor(_name, _score){
@@ -9,7 +7,8 @@ class ScoreSave {
 
 
     save(){
-        
+        console.log (this.name);
+        console.log(this.score);
     }
 }
 

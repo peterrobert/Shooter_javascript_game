@@ -1,5 +1,7 @@
-export function Initialize() {
+import { ScoreSave } from "./score";
 
+export function Initialize(_name) {
+  let name = _name
   function gameStart() {
 
     // create Phaser.Game object named "game"
@@ -134,6 +136,9 @@ export function Initialize() {
         fireKey.onDown.addOnce(restartGame, this);
   
         //    call the function here to save score
+
+       let personScore = new ScoreSave(name, score);
+       personScore.save();
       }
   
       teleportSound.play();

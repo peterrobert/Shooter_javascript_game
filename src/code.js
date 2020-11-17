@@ -2,7 +2,7 @@ import {Initialize} from "./gameScene";
 
 let container = document.getElementById('my-game');
 
-
+let name
 container.innerHTML = `
 <form id = "nameForm">
   <label for="fname">Please Enter Your name:</label>
@@ -13,7 +13,9 @@ container.innerHTML = `
 
 let SubmitName = document.getElementById('nameForm');
 SubmitName.addEventListener('submit', () => {
+  name = document.getElementById('fname').value;
   container.innerHTML = '';
-   Initialize();
+
+   Initialize(name);
 })
 
