@@ -55,3 +55,15 @@
     color: #000;
     margin-top: 40px;
 }
+
+#leader_board{
+    position: absolute;
+    top: 20px;
+    left: 18px;
+}
+
+#btnb {
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}

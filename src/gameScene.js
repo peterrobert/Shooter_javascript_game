@@ -1,5 +1,5 @@
 import { ScoreSave } from "./score";
-import { LeadersBoard } from "./LeadersBoard";
+import { DisplayLeader } from "./code";
 export function Initialize(_name) {
   let name = _name
   function gameStart() {
@@ -139,10 +139,6 @@ export function Initialize(_name) {
 
        let personScore = new ScoreSave(name, score);
        personScore.save();
-
-      //  arrow keys
-
-      arrowKey.onDown(LeadersBoard.leaderDisplay(), this);
 
       }
   

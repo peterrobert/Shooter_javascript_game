@@ -1,3 +1,5 @@
+import { theValues } from "./code";
+
 class ScoreSave {
   constructor(_name, _score) {
     this.name = _name;
@@ -32,7 +34,8 @@ class ScoreSave {
       }
     )
       .then((response) => response.json())
-      .then((json) => console.log(json));
+      .then((json) => theValues(json) );
+
   }
 }
 
