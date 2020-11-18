@@ -1,10 +1,11 @@
 /* eslint-disable import/no-cycle, import/prefer-default-export, no-console, no-plusplus */
 import { Initialize } from './gameScene';
 import { ScoreSave } from './score';
-window.onload = () =>{
-let container = document.getElementById('my-game');
 
-let name;
+window.onload = () => {
+  const container = document.getElementById('my-game');
+
+  let name;
 
   container.innerHTML = `<form id = "nameForm">
   <label for="fname">Please Enter Your name:</label>
@@ -13,34 +14,30 @@ let name;
 </form>
 `;
 
+  const SubmitName = document.getElementById('nameForm');
+  SubmitName.addEventListener('submit', () => {
+    name = document.getElementById('fname').value;
+    container.innerHTML = '';
 
+    Initialize(name);
+  });
 
-const SubmitName = document.getElementById('nameForm');
-SubmitName.addEventListener('submit', () => {
-  name = document.getElementById('fname').value;
-  container.innerHTML = '';
-
-  Initialize(name);
-});
-
-const buttonContainer = document.getElementById('leader_board');
-buttonContainer.innerHTML = `<button id="btnb">Leaders Board</button>
+  const buttonContainer = document.getElementById('leader_board');
+  buttonContainer.innerHTML = `<button id="btnb">Leaders Board</button>
 <div id="leader_show">
 
 
 </div>`;
 
-const Leadrbtn = document.getElementById('btnb');
-const elementsContainer = document.getElementById('leader_show');
+  const Leadrbtn = document.getElementById('btnb');
 
-Leadrbtn.addEventListener('click', () => {
-  const Lead = new ScoreSave();
-  Lead.leaderBoard();
+  Leadrbtn.addEventListener('click', () => {
+    const Lead = new ScoreSave();
+    Lead.leaderBoard();
 
-  Leadrbtn.disabled = 'disabled';
-});
-
-}
+    Leadrbtn.disabled = 'disabled';
+  });
+};
 export function theValues(value) {
   try {
     const rValues = value.result;
@@ -52,7 +49,6 @@ export function theValues(value) {
 
       ulContainer.appendChild(listContainers);
     }
-    elementsContainer.append(ulContainer);
   } catch (error) {
     console.log(error);
   }
