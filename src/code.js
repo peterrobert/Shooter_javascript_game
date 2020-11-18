@@ -22,29 +22,40 @@ SubmitName.addEventListener("submit", () => {
 
 let buttonContainer = document.getElementById("leader_board");
 buttonContainer.innerHTML = `<button id="btnb">Leaders Board</button>
-
 <div id="leader_show">
 
-<ul id="list-items"> </ul>
 
 </div>`;
 
-let elementsContainer = document.getElementById('list-items')
 let Leadrbtn = document.getElementById("btnb");
-
+let elementsContainer = document.getElementById("leader_show");
 
 Leadrbtn.addEventListener("click", () => {
- 
-let Lead = new ScoreSave();
-Lead.leaderBoard();
+  let Lead = new ScoreSave();
+  Lead.leaderBoard();
 
+  Leadrbtn.disabled = "disabled";
 });
 
-
 export function theValues(value) {
+ try {
+
+   let rValues = value.result
   
-  for (let i = 0; i < value.length; i++) {
-    elementsContainer.innerHTML = `<li>name: ${value[i].user} score: ${value[i].score} </li>`
+  let ulContainer = document.createElement("ul");
+  for (let i = 0; i < rValues.length; i++) {
+
+    let listContainers = document.createElement("li");
+    listContainers.innerText = `name: ${ rValues[i].user}      score: ${ rValues[i].score}`;
+
+    ulContainer.appendChild(listContainers)
+    
   }
-  
+  elementsContainer.append(ulContainer);
+   
+ } catch (error) {
+   console.log(error);
+ }
+
+ 
 }

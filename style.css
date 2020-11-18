@@ -67,3 +67,18 @@
     text-transform: uppercase;
     font-weight: bold;
 }
+
+ul{
+    list-style-type: none;
+}
+
+#leader_show li{
+  color:#25a725 ;  
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: bolder;
+    padding: 6px;
+    position: relative;
+    left: -40px;
+    font-family: 'Big Shoulders Stencil Display', cursive;
+}
