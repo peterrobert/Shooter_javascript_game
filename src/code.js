@@ -1,17 +1,19 @@
 /* eslint-disable import/no-cycle, import/prefer-default-export, no-console, no-plusplus */
 import { Initialize } from './gameScene';
 import { ScoreSave } from './score';
-
-const container = document.getElementById('my-game');
+window.onload = () =>{
+let container = document.getElementById('my-game');
 
 let name;
-container.innerHTML = `
-<form id = "nameForm">
+
+  container.innerHTML = `<form id = "nameForm">
   <label for="fname">Please Enter Your name:</label>
   <input type="text" id="fname" name="fname" required><br><br>
   <input type="submit" value="Submit" id="sub-btn"">
 </form>
 `;
+
+
 
 const SubmitName = document.getElementById('nameForm');
 SubmitName.addEventListener('submit', () => {
@@ -38,6 +40,7 @@ Leadrbtn.addEventListener('click', () => {
   Leadrbtn.disabled = 'disabled';
 });
 
+}
 export function theValues(value) {
   try {
     const rValues = value.result;

@@ -1,28 +1,11 @@
 import 'regenerator-runtime';
+const { ScoreSave } = require('./score');
 
-const { getScores, sendScores } = require('./score');
 
-describe('Game Score API interfase', () => {
-  test('Saves the name and score of user', async () => {
-    const name = 'usermock';
-    const score = 300;
-    expect.assertions(1);
-    return sendScores(name, score).then(data => {
-      expect(data.result).toEqual('Leaderboard score created correctly.');
-    });
-  });
+test('It creates an instance of the scoreSave class', () => {
+  const obj = new ScoreSave ('peter', 200);
 
-  test('GetScore Gets an array', async () => {
-    const res = await getScores();
-    expect(Array.isArray(res)).toBe(true);
-  });
-
-  test('Gets the names of the users', async () => getScores().then(data => {
-    expect(data[0].user).toEqual('usermock');
-  }));
-
-  test('Gets score and checks if correct amount', async () => {
-    const scores = await getScores();
-    expect(scores[0].score).toEqual(300);
-  });
+  expect(obj.name).toBe('peter');
+  expect(obj.score).toBe(200);
 });
+
