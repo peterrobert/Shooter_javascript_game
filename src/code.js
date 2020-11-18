@@ -1,7 +1,8 @@
-import { Initialize } from "./gameScene";
-import { ScoreSave } from "./score";
+/* eslint-disable import/no-cycle, import/prefer-default-export, no-console, no-plusplus */
+import { Initialize } from './gameScene';
+import { ScoreSave } from './score';
 
-let container = document.getElementById("my-game");
+const container = document.getElementById('my-game');
 
 let name;
 container.innerHTML = `
@@ -12,50 +13,44 @@ container.innerHTML = `
 </form>
 `;
 
-let SubmitName = document.getElementById("nameForm");
-SubmitName.addEventListener("submit", () => {
-  name = document.getElementById("fname").value;
-  container.innerHTML = "";
+const SubmitName = document.getElementById('nameForm');
+SubmitName.addEventListener('submit', () => {
+  name = document.getElementById('fname').value;
+  container.innerHTML = '';
 
   Initialize(name);
 });
 
-let buttonContainer = document.getElementById("leader_board");
+const buttonContainer = document.getElementById('leader_board');
 buttonContainer.innerHTML = `<button id="btnb">Leaders Board</button>
 <div id="leader_show">
 
 
 </div>`;
 
-let Leadrbtn = document.getElementById("btnb");
-let elementsContainer = document.getElementById("leader_show");
+const Leadrbtn = document.getElementById('btnb');
+const elementsContainer = document.getElementById('leader_show');
 
-Leadrbtn.addEventListener("click", () => {
-  let Lead = new ScoreSave();
+Leadrbtn.addEventListener('click', () => {
+  const Lead = new ScoreSave();
   Lead.leaderBoard();
 
-  Leadrbtn.disabled = "disabled";
+  Leadrbtn.disabled = 'disabled';
 });
 
 export function theValues(value) {
- try {
+  try {
+    const rValues = value.result;
 
-   let rValues = value.result
-  
-  let ulContainer = document.createElement("ul");
-  for (let i = 0; i < rValues.length; i++) {
+    const ulContainer = document.createElement('ul');
+    for (let i = 0; i < rValues.length; i++) {
+      const listContainers = document.createElement('li');
+      listContainers.innerText = `name: ${rValues[i].user}      score: ${rValues[i].score}`;
 
-    let listContainers = document.createElement("li");
-    listContainers.innerText = `name: ${ rValues[i].user}      score: ${ rValues[i].score}`;
-
-    ulContainer.appendChild(listContainers)
-    
+      ulContainer.appendChild(listContainers);
+    }
+    elementsContainer.append(ulContainer);
+  } catch (error) {
+    console.log(error);
   }
-  elementsContainer.append(ulContainer);
-   
- } catch (error) {
-   console.log(error);
- }
-
- 
 }

@@ -44,6 +44,7 @@
     "jest-canvas-mock": "^2.3.0",
     "node-fetch": "^2.6.1",
     "phaser": "^3.24.1",
+    "phaser-webpack-loader": "^2.0.0",
     "regenerator-runtime": "^0.13.7",
     "style-loader": "^2.0.0"
   },

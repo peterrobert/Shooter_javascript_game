@@ -1,2 +1,2 @@
 **/*.phaser.min.js
-**/*.js
+**/*.gameScene.js

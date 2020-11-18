@@ -1,23 +1,25 @@
-import { theValues } from "./code";
+/* eslint-disable no-use-before-define, no-unused-expressions, no-console, class-methods-use-this, import/prefer-default-export, import/no-cycle, max-len */
+import { theValues } from './code';
+
 class ScoreSave {
-  constructor(_name, _score) {
-    this.name = _name;
-    this.score = _score;
+  constructor(name, score) {
+    this.name = name;
+    this.score = score;
   }
 
   save() {
-    let _data = {
+    const data = {
       user: this.name,
       score: this.score,
     };
 
     fetch(
-      "https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/tHxVDyAAsZqSgm0dnTap/scores",
+      'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/tHxVDyAAsZqSgm0dnTap/scores',
       {
-        method: "POST",
-        body: JSON.stringify(_data),
-        headers: { "Content-type": "application/json; charset=UTF-8" },
-      }
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: { 'Content-type': 'application/json; charset=UTF-8' },
+      },
     )
       .then((response) => response.json())
       .then((json) => console.log(json));
@@ -25,16 +27,15 @@ class ScoreSave {
 
   leaderBoard() {
     fetch(
-      "https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/tHxVDyAAsZqSgm0dnTap/scores",
+      'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/tHxVDyAAsZqSgm0dnTap/scores',
       {
-        method: "GET",
+        method: 'GET',
         body: JSON.stringify(),
-        headers: { "Content-type": "application/json; charset=UTF-8" },
-      }
+        headers: { 'Content-type': 'application/json; charset=UTF-8' },
+      },
     )
-      .then((response) =>  response.json())
-      .then((json) => theValues(json) );
-
+      .then((response) => response.json())
+      .then((json) => theValues(json));
   }
 }
 
