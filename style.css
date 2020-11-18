@@ -1,84 +1,83 @@
 #my-game {
-    /* optional */
-    width: 800px;
-    height: 600px;
-    margin: 0 auto;
-    border: 1px solid black;
+  /* optional */
+  width: 800px;
+  height: 600px;
+  margin: 0 auto;
+  border: 1px solid black;
 
-    background-color:#383636;
+  background-color: #383636;
 }
 
-.form-group{
-    font-weight: bolder;
-    margin: 0 auto;
-    position: absolute;
-    left: 50px;
-    margin-top: 600px;
-    color: #00ff00;
-    text-transform: uppercase;
-    font-family: arial;
+.form-group {
+  font-weight: bolder;
+  margin: 0 auto;
+  position: absolute;
+  left: 50px;
+  margin-top: 600px;
+  color: #00ff00;
+  text-transform: uppercase;
+  font-family: arial;
 }
 
-#usr{
-    border-radius: 11px;
-    height: 30px;
-    width: 240px;
+#usr {
+  border-radius: 11px;
+  height: 30px;
+  width: 240px;
 }
 
-#nameForm{
-    color: #fff;
-    text-align: center;
-    margin-top: 200px;
+#nameForm {
+  color: #fff;
+  text-align: center;
+  margin-top: 200px;
 }
 
-#nameForm #fname{
-    padding: 10px;
-    width: 50%;
-    border-radius: 15px;
-    border: 2px, solid, #00ff00;
-
+#nameForm #fname {
+  padding: 10px;
+  width: 50%;
+  border-radius: 15px;
+  border: 2px, solid, #00ff00;
 }
 
-#nameForm label{
-    font-size: 16px;
-    font-weight: 800;
-    color: #00ff00;
-    text-transform: uppercase;
+#nameForm label {
+  font-size: 16px;
+  font-weight: 800;
+  color: #00ff00;
+  text-transform: uppercase;
 }
 
-#sub-btn{
-    width: 150px;
-    text-transform: uppercase;
-    font-weight: 800;
-    background-color: #00ff00;
-    padding: 8px;
-    color: #000;
-    margin-top: 40px;
+#sub-btn {
+  width: 150px;
+  text-transform: uppercase;
+  font-weight: 800;
+  background-color: #00ff00;
+  padding: 8px;
+  color: #000;
+  margin-top: 40px;
 }
 
-#leader_board{
-    position: absolute;
-    top: 20px;
-    left: 18px;
+#leader_board {
+  position: absolute;
+  top: 20px;
+  left: 18px;
 }
 
 #btnb {
-    padding: 10px;
-    text-transform: uppercase;
-    font-weight: bold;
+  padding: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
-ul{
-    list-style-type: none;
+ul {
+  list-style-type: none;
 }
 
-#leader_show li{
-  color:#25a725 ;  
-    font-size: 18px;
-    text-transform: capitalize;
-    font-weight: bolder;
-    padding: 6px;
-    position: relative;
-    left: -40px;
-    font-family: 'Big Shoulders Stencil Display', cursive;
+#leader_show li {
+  color: #25a725;
+  font-size: 18px;
+  text-transform: capitalize;
+  font-weight: bolder;
+  padding: 6px;
+  position: relative;
+  left: -40px;
+  font-family: "Big Shoulders Stencil Display", cursive;
 }
