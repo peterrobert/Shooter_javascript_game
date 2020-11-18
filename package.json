@@ -20,10 +20,30 @@
   },
   "homepage": "https://github.com/peterrobert/Shooter_javascript_game#readme",
   "devDependencies": {
-    "webpack": "^5.4.0",
-    "webpack-cli": "^4.2.0"
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.6.3",
+    "babel-polyfill": "^6.26.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "jest": "^26.6.3",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "jest": "^26.6.3"
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "babel-install": "^2.1.0",
+    "css-loader": "^5.0.0",
+    "file-loader": "^6.1.1",
+    "jest-canvas-mock": "^2.3.0",
+    "node-fetch": "^2.6.1",
+    "phaser": "^3.24.1",
+    "regenerator-runtime": "^0.13.7",
+    "style-loader": "^2.0.0"
+  },
+  "transform": {
+    "\\.js$": "<rootDir>/node_modules/babel-jest"
   }
 }

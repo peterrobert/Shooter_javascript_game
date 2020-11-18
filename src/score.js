@@ -1,5 +1,4 @@
 import { theValues } from "./code";
-
 class ScoreSave {
   constructor(_name, _score) {
     this.name = _name;
