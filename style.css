@@ -15,7 +15,7 @@
   margin-top: 600px;
   color: #0f0;
   text-transform: uppercase;
-  font-family: arial;
+  font-family: arial, Helvetica, sans-serif;
 }
 
 #usr {
@@ -34,13 +34,12 @@
   padding: 10px;
   width: 50%;
   border-radius: 15px;
-  border: 2px, solid, #0f0;;
 }
 
 #nameForm label {
   font-size: 16px;
   font-weight: 800;
-  color: #0f0;;
+  color: #0f0;
   text-transform: uppercase;
 }
 
@@ -48,7 +47,7 @@
   width: 150px;
   text-transform: uppercase;
   font-weight: 800;
-  background-color: #0f0;;
+  background-color: #0f0;
   padding: 8px;
   color: #000;
   margin-top: 40px;
