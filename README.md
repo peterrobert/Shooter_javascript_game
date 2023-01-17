@@ -2,7 +2,7 @@
 <p align="center">
   <h3 align="center">Space Shooter(THE WAR ON MARS)</h3>
   <p align="center">
-  A JavaScript project built using the Phaser 3 Game Engine
+  A JavaScript project built using the Phaser 3 Game Engine.
     <br />
     <a href=""><strong>Explore the docs �</strong></a>
     <br />
