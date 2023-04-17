@@ -38,7 +38,7 @@
 
 ## Project Description
 
-> This is javascript capstone project built with the Phaser 3 Game Engine.During the development process two days where all about to understanding how the game engine works and design how the game should look. Time was spent creating several assets to achieve an exceptional design. The final days consisted of building the project in order to produce a fully functional space shooter game that has different features to allow players to enjoy game play.
+> This is javascript capstone project built with the Phaser 3 Game Engine.During the development process two days where all about to understanding how the game engine works and design how the game should look. Time was spent creating several assets to achieve an exceptional design. The final days consisted of building the project in order to produce a fully functional space shooter game that has different features to allow players to enjoy game play...
 
 ![screenshot](sr.png)
 
